@@ -4,7 +4,7 @@ const lorem = require('lorem-ipsum')
 
 app.get('/lorem/:number', function (request, response) {
   const number = parseInt(request.params.number)
-  response.send(lorem({count: number, units: 'paragraphs', format: 'html'}))
+  response.send('<html><body>' + lorem({count: number, units: 'paragraphs', format: 'html'}) + '</body></html>')
 })
 
 app.listen(3000, function () {
